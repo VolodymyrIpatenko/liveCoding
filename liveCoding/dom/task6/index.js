@@ -3,4 +3,4 @@ function setButton(buttonText) {
   document.querySelector("body").textContent = `<button>${buttonText}</button>`;
 }
 
-setButton(buttonText);
+setButton("button text");
