@@ -15,9 +15,7 @@ const removehHandless = document.querySelector('.remove-handlers-btn');
 const logTarget = (text, color) => {
   const eventListElem = document.querySelector('.events-list');
 
-  eventListElem.innerHTML += (
-    <span style="color: ${color}; margin-left: 8px;">${text}</span>
-  );
+  eventListElem.innerHTML += `<span style="color: ${color}; margin-left: 8px;">${text}</span>`;
 };
 
 const logGreenDiv = logTarget.bind(null, 'DIV', 'green');
