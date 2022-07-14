@@ -1,16 +1,25 @@
 const arrr = [
-  { name: "John", id: "1" },
-  { name: "Mary", id: "2" },
+  { name: 'John', id: '1' },
+  { name: 'Mary', id: '2' },
 ];
 
 function getName(arrr, id) {
   return arrr
     .filter(el => el.id === id)
     .map(el => el.name)
-    .join("");
+    .join('');
 }
 
-console.log(getName(arrr, "2"));
+console.log(getName(arrr, '2'));
+
+const keys = [1, 2, 3];
+const values = ['a', 'b', 'c'];
+function getObj(arr) {
+  return Object.fromEntries(keys.map((_, el) => [keys[el], values[el]]));
+}
+
+console.log(getObj(keys, values));
+
 // const numbersList = [5, 0, 8, 10, -4, 50, 220];
 // const mapResult = numbersList.map(el => {
 //   const newEl = el * el;
