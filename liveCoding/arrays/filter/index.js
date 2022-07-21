@@ -65,3 +65,17 @@ const callback = (el, index, arr) => {
 console.log(mapArray(arr, callback));
 console.log(mapArray(ar2, callback));
 console.log(mapArray(ar3, callback));
+
+const newArr = ['10', 10, NaN, undefined, null, ''];
+function filt(newArr) {
+  return newArr.filter(el => !isNaN(el));
+}
+console.log(filt(newArr));
+
+/////////
+
+function mapArr(arr) {
+  return arr.map((el, ind) => (el = el * ind)).reduce((acc, el) => acc + el, 0);
+}
+
+console.log(mapArr([1, 2, 3]));

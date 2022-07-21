@@ -1,11 +1,11 @@
+/*# sourceMappingURL=style.css.map */
 .page {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
-  flex-direction: column;
 }
-
 .user {
   display: flex;
   flex-direction: column;
@@ -49,5 +49,3 @@
   border-radius: 8px;
   margin-left: 16px;
 }
-
-/*# sourceMappingURL=style.css.map */

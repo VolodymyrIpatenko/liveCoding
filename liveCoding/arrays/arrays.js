@@ -100,3 +100,19 @@ console.log(getObj(keys, values));
 // // но изменить эти свойства нельзя
 // // user.name = 'Bob'; // пытаемся изменить старое значение
 // // console.log(user.name); // ===> 'Tom' - но изменение проигнорировано, так как setter отсутствует
+const withdraw = (clients, balances, client, amount) => {
+  const clientIndex = clients.indexOf(client);
+  if (balances[clientIndex] < amount) {
+    return -1;
+  }
+  const finalAmount = (balances[clientIndex] -= amount);
+  return finalAmount;
+};
+
+console.log(withdraw(['Ann', 'John', 'User'], [1400, 87, -6], 'John', 50));
+
+const getMaxAbsolute = arr => {
+  const absoluteValues = arr.map(el => Math.abs(el));
+  return Math.max(...absoluteValues);
+};
+console.log(getMaxAbsolute([-777, 3, -1, 45, -20]));
