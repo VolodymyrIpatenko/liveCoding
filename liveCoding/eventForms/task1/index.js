@@ -3,7 +3,6 @@
 
 const emailElem = document.querySelector('#email');
 const passwordElem = document.querySelector('#password');
-
 const emailErrorElem = document.querySelector('.error-text_email');
 const passwordErrorElem = document.querySelector('.error-text_password');
 
@@ -47,5 +46,5 @@ const onFormSubmit = event => {
     {}
   );
   alert(JSON.stringify(formData));
-};
+
 formElem.addEventListener('submit', onFormSubmit);

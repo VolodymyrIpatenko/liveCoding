@@ -204,34 +204,54 @@
 ///////bad naming
 ////redundant variables
 ////don't use shift
-const getCustomersList = obj => {
-  const moderArr = Object.entries(obj).map(arr => {
-    let id = { id: arr.shift() };
-    return (arr[0] = { ...arr[0], ...id });
-  });
+// const getCustomersList = obj => {
+//   const moderArr = Object.entries(obj).map(arr => {
+//     let id = { id: arr.shift() };
+//     return (arr[0] = { ...arr[0], ...id });
+//   });
 
-  return moderArr.sort((a, b) => a.age - b.age);
-};
+//   return moderArr.sort((a, b) => a.age - b.age);
+// };
 
 ///////Don't use index
 /////bad naming
 
-const getCustomersList = customers =>
-  Object.keys(customers)
-    .reduce((acc, elem, index) => {
-      acc[index] = { id: elem, ...customers[elem] };
-      return acc;
-    }, [])
-    .sort((a, b) => a.age - b.age);
+// const getCustomersList = customers =>
+//   Object.keys(customers)
+//     .reduce((acc, elem, index) => {
+//       acc[index] = { id: elem, ...customers[elem] };
+//      return acc;
+//     }, [])
+//     .sort((a, b) => a.age - b.age);
 ////////
 ////Bad
 ////redundant variables
 ////bad naming
 /////
-const getCustomersList = obj => {
-  // obj is the object we want to get the keys from
-  const order = Object.entries(obj).sort((a, b) => a[1].age - b[1].age); // sort the object by age
-  const first = order.map(el => el[1]); // get the values
-  const second = order.map(el => el[0]); // get the keys
-  return first.map((el, index) => ({ ...el, id: second[index] })); // print the values and keys
+// const getCustomersList = obj => {
+//   // obj is the object we want to get the keys from
+//   const order = Object.entries(obj).sort((a, b) => a[1].age - b[1].age); // sort the object by age
+//   const first = order.map(el => el[1]); // get the values
+//   const second = order.map(el => el[0]); // get the keys
+//   return first.map((el, index) => ({ ...el, id: second[index] })); // print the values and keys
+// };
+
+const setId = obj => {
+  const keys = Object.keys(obj);
+  return keys.map(key => ({ id: key, ...obj[key] }));
 };
+const obj = {
+  'customers-id-1': {
+    name: 'William',
+    age: 54,
+  },
+  'customers-id-2': {
+    name: 'Tom',
+    age: 17,
+  },
+  'customers-id-3': {
+    name: 'Ann',
+    age: 16,
+  },
+};
+console.log(setId(obj));

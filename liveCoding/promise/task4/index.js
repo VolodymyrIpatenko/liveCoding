@@ -11,3 +11,8 @@ failedPromise.catch(function onError(error) {
   /* ...code here */
   console.log(error);
 });
+
+function makePromise(value) {
+  return Promise.resolve(value);
+}
+console.log(makePromise(10));
